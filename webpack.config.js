@@ -7,7 +7,7 @@ const config = require("uxf-webpack/config/webpack.config.full");
 config.entry = "./js/main.js";
 config.output.path = path.join(__dirname, "dist");
 config.output.filename = "ripe-skeleton-vue.min.js?[hash]";
-config.output.library = "RipeSekeletonVue";
+config.output.library = "RipeSkeletonVue";
 config.output.publicPath = "/";
 config.devServer = {
     contentBase: path.join(__dirname, "dist"),
