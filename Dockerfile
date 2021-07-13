@@ -30,8 +30,8 @@ WORKDIR /app
 
 RUN pip3 install --upgrade netius
 RUN apk update && apk add nodejs npm
-RUN npm install
-RUN npm install --only=dev
-RUN npm run build
+RUN npm install --global yarn
+RUN NODE_ENV=dev yarn install
+RUN yarn run build
 
 CMD ["/usr/bin/python3", "-m", "netius.extra.filea"]
