@@ -1,3 +1,1 @@
-import "core-js";
-import "regenerator-runtime/runtime";
-import "whatwg-fetch";
+import "@babel/runtime/regenerator";
