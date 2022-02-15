@@ -1,6 +1,10 @@
 <template>
     <div class="home">
         Hello World
+        <link-ripe
+            v-bind:text="'Go to field'"
+            v-bind:href="'/field'"
+        />
     </div>
 </template>
 
@@ -11,9 +15,9 @@
 </style>
 
 <script>
-import Vue from "vue";
-
-export const Home = Vue.component("home", {});
+export const Home = {
+    name: "home"
+};
 
 export default Home;
 </script>

@@ -9,9 +9,11 @@
     <body onload="RipeSkeletonVue.init();">
         <div id="app" class="app">
             <global></global>
-            <transition name="fade-full" mode="out-in">
-                <router-view v-bind:key="$route.path"></router-view>
-            </transition>
+            <router-view v-slot="{ Component }">
+                <transition name="fade-full" mode="out-in">
+                    <component v-bind:is="Component" />
+                </transition>
+            </router-view>
         </div>
     </body>
 </html>

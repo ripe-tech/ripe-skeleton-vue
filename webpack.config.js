@@ -52,6 +52,11 @@ const config = {
                         js: "babel-loader",
                         scss: "vue-style-loader!css-loader!sass-loader",
                         sass: "vue-style-loader!css-loader!sass-loader?indentedSyntax"
+                    },
+                    compilerOptions: {
+                        compatConfig: {
+                            MODE: 2
+                        }
                     }
                 }
             },
@@ -84,22 +89,22 @@ const config = {
                             presets: [
                                 process.env.NODE_ENV === "development"
                                     ? [
-                                          "@babel/preset-env",
-                                          {
-                                              targets: {
-                                                  browsers: ["last 2 years"]
-                                              },
-                                              useBuiltIns: "entry",
-                                              corejs: "3"
-                                          }
-                                      ]
+                                        "@babel/preset-env",
+                                        {
+                                            targets: {
+                                                browsers: ["last 2 years"]
+                                            },
+                                            useBuiltIns: "entry",
+                                            corejs: "3"
+                                        }
+                                    ]
                                     : [
-                                          "@babel/preset-env",
-                                          {
-                                              useBuiltIns: "entry",
-                                              corejs: "3"
-                                          }
-                                      ]
+                                        "@babel/preset-env",
+                                        {
+                                            useBuiltIns: "entry",
+                                            corejs: "3"
+                                        }
+                                    ]
                             ],
                             plugins: [
                                 [
@@ -153,7 +158,9 @@ const config = {
     resolve: {
         alias: {
             base$: "../../../js",
-            vue$: "vue/dist/vue.esm.js"
+            vue: "vue/dist/vue.esm-bundler.js"
+            // vue: "@vue/compat"
+            // vue$: "vue/dist/vue.esm.js"
         },
         fallback: {
             fs: false,
