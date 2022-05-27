@@ -29,7 +29,7 @@ ADD vue /app/vue
 WORKDIR /app
 
 RUN pip3 install --upgrade netius
-RUN apk update && apk add nodejs npm
+RUN apk update && apk add nodejs npm python make g++
 RUN npm install --global yarn
 RUN NODE_ENV=dev yarn install
 RUN yarn run build
