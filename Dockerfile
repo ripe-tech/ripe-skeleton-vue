@@ -28,9 +28,10 @@ ADD vue /app/vue
 
 WORKDIR /app
 
+RUN apk update &&\
+    apk add --no-cache git nodejs npm python3 py3-pip make g++
+
 RUN pip3 install --upgrade netius
-RUN apk update && apk add --no-cache nodejs npm python3 make g++
-RUN npm install --global yarn
 RUN NODE_ENV=dev yarn install
 RUN yarn run build
 
