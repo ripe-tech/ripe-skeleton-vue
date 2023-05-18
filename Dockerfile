@@ -31,7 +31,7 @@ WORKDIR /app
 RUN apk update &&\
     apk add --no-cache git nodejs npm python3 py3-pip make g++
 
-RUN pip3 install --upgrade netius
+RUN pip3 install --no-cache-dir --upgrade netius
 RUN NODE_ENV=dev yarn install
 RUN yarn run build
 
